@@ -1,0 +1,31 @@
+conservative_reset:
+    reset_distance: 1
+rotate_recovery:
+    sim_granularity: 0.017
+    frequency: 20
+stepback_and_steerturn_recovery:
+
+    only_single_steering: true
+
+    trial_times         : 3
+
+    obstacle_patience   : 0.5
+
+    obstacle_check_frequency: 5.0
+
+    sim_angle_resolution: 0.1
+
+    simulation_frequency    : 5
+
+    linear_vel_back     : -0.2
+    step_back_length    : 0.5
+    step_back_timeout   : 15.0
+
+    linear_vel_steer    : 0.3
+    angular_speed_steer : 0.5
+    turn_angle          : 1
+    steering_timeout    : 15.0
+    
+    linear_vel_forward  : 0.3
+    step_forward_length : 1.0
+    step_forward_timeout: 15.0

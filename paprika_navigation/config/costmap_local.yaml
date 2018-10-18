@@ -1,0 +1,29 @@
+global_frame: odom
+rolling_window: true
+width: 6.0
+height: 6.0
+publish_frequency: 2
+update_frequency: 5.0
+
+
+plugins:
+  - {name: obstacles,           type: "costmap_2d::ObstacleLayer"}
+  - {name: inflation,           type: "costmap_2d::InflationLayer"}
+
+
+#layer definitions
+static:
+    map_topic: /map
+    subscribe_to_updates: true
+
+obstacles:
+    observation_sources: laser
+    laser: {data_type: LaserScan, clearing: true, marking: true, topic: /scan, inf_is_valid: true, max_obstacle_height: 0.8}
+
+inflation:
+    inflation_radius: 0.2
+    cost_scaling_factor: 0.5
+
+prohibition:
+    prohibition_areas:
+      [[[-8, -1.25],[-1, -1.25],[-1, 1.25],[-8, 1.25]], [[10, -1.25],[1, -1.25],[1, 1.25],[10, 1.25]]]
