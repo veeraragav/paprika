@@ -55,11 +55,6 @@
     <rosparam file="$(find paprika_navigation)/config/costmap_common.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find paprika_navigation)/config/costmap_local.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find paprika_navigation)/config/costmap_global_static.yaml" command="load" ns="global_costmap" unless="$(arg no_static_map)"/>
-
-    <!-- global costmap with laser, for odom_navigation_demo
-    <rosparam file="$(find husky_navigation)/config/costmap_global_laser.yaml" command="load" ns="global_costmap" if="$(arg no_static_map)"/>
-    <param name="global_costmap/width" value="100.0" if="$(arg no_static_map)"/>
-    <param name="global_costmap/height" value="100.0" if="$(arg no_static_map)"/>
-  -->
-</node>
+  </node>
+    
 </launch>
