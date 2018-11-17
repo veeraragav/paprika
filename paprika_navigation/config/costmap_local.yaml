@@ -1,7 +1,7 @@
 global_frame: odom
 rolling_window: true
-width: 6.0
-height: 6.0
+width: 5.0
+height: 5.0
 publish_frequency: 2
 update_frequency: 5.0
 
@@ -21,7 +21,7 @@ obstacles:
     laser: {data_type: LaserScan, clearing: true, marking: true, topic: /scan, inf_is_valid: true, max_obstacle_height: 0.8}
 
 inflation:
-    inflation_radius: 0.2
+    inflation_radius: 0.1
     cost_scaling_factor: 0.5
 
 prohibition:

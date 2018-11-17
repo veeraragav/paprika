@@ -16,27 +16,27 @@ LocalPlannerAdapter:
 DWBPlannerROS:
   prune_plan: false
   # Robot configuration parameters
-  acc_lim_x: 2.5
+  acc_lim_x: 0.3
   acc_lim_y: 0
   acc_lim_th: 1 #3.2
 
-  max_vel_x: 1
+  max_vel_x: 0.2
   min_vel_x: 0.0
   max_vel_y: 0
   min_vel_y: 0
 
-  max_trans_vel: 0.5
-  min_trans_vel: 0.1
-  max_rot_vel: 1.5
+  max_trans_vel: 0.3
+  min_trans_vel: 0.05
+  max_rot_vel: 0.55
   min_rot_vel: 0.2 #0.2
 
   # Goal Tolerance Parameters
-  yaw_goal_tolerance: 0.2
-  xy_goal_tolerance: 0.5 #0.2
+  yaw_goal_tolerance: 0.1
+  xy_goal_tolerance: 0.1 #0.2
   latch_xy_goal_tolerance: false
 
   # Forward Simulation Parameters
-  sim_time: 4.0
+  sim_time: 2.0
   sim_granularity: 0.02
   vx_samples: 20 #50
   vy_samples: 1
@@ -44,7 +44,7 @@ DWBPlannerROS:
 
 
   # Trajectory scoring parameters
-  path_distance_bias: 20.0 # The weighting for how much the controller should stay close to the path it was given
+  path_distance_bias: 30.0 # The weighting for how much the controller should stay close to the path it was given
   goal_distance_bias: 30.0 # The weighting for how much the controller should attempt to reach its local goal, also controls speed
   occdist_scale: 0.01 # The weighting for how much the controller should attempt to avoid obstacles
   forward_point_distance: 0 # The distance from the center point of the robot to place an additional scoring point, in meters

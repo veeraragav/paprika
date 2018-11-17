@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <!--
     BSD 3-Clause License
 
@@ -30,7 +31,7 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?xml version="1.0"?>
+
 
 <launch>
 
@@ -56,5 +57,5 @@
     <rosparam file="$(find paprika_navigation)/config/costmap_local.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find paprika_navigation)/config/costmap_global_static.yaml" command="load" ns="global_costmap" unless="$(arg no_static_map)"/>
   </node>
-    
+
 </launch>

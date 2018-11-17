@@ -32,22 +32,18 @@
 -->
 <launch>
 
-  <include file="$(find rhino_dc_servo)/launch/rhino_differential1.launch"/>
+  <include file="$(find rhino_dc_servo)/launch/rhino_differential.launch"/>
 
-<!-- Kinect node -->
-  <include file="$(find freenect_launch)/launch/freenect.launch">
-         <arg name="camera" default="camera"/>
-         <arg name="depth_registration" value="true"/>
-  </include>
+  <arg name="model" default="$(find paprika_description)/urdf/paprika_simple.xacro"/>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
 
-  <!-- Kinect cloud to laser scan-->
-  <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan">
-      <remap from="image"     to="/camera/depth/image_raw"/>
-      <remap from="camera_info" to="/camera/depth/camera_info"/>
-      <remap from="scan" to="/scan"/>
+  <node name="robot_state_publisher"
+      pkg="robot_state_publisher"
+      type="robot_state_publisher"
+      respawn="false"
+      output="screen"/>
 
-      <param name="range_max" type="double" value="10"/>
-      <param name="output_frame_id" value="kinect"/>
-  </node>
+
+
 
 </launch>
