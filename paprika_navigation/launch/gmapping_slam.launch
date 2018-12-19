@@ -32,6 +32,15 @@
 
 <launch>
 
+  <node name="rviz"
+      pkg="rviz"
+      type="rviz"
+      args="-d $(find paprika_navigation)/rviz/mapping.rviz"
+      required="false"
+     />
+
+<!-- <include file="$(find paprika_navigation)/launch/robot.launch" /> -->
+
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
       <param name="base_frame" value="/base_link" />            #############################
       <param name="odom_frame" value="odom" />

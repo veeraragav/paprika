@@ -3,10 +3,10 @@
   <!-- Kinect node
   <arg name="camera" default="camera"/>
   <arg name="depth_registration" value="true"/>
- -->
-    <include file="$(find openni_launch)/launch/openni.launch">
+<include file="$(find freenect_launch)/launch/freenect.launch"/>
+        -->
 
-    </include>
+    <include file="$(find openni_launch)/launch/openni.launch"/>
 
   <!-- Kinect cloud to laser scan-->
   <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan">

@@ -42,7 +42,7 @@
       output="screen"/>
 
   <!-- odometry nodes -->
-  <include file="$(find rhino_dc_servo)/launch/rhino_differential1.launch"/>
+  <include file="$(find rhino_dc_servo)/launch/rhino_differential.launch"/>
 
   <!--- Run AMCL -->
   <include file="$(find paprika_navigation)/launch/amcl.launch" />
@@ -50,7 +50,12 @@
   <!--- Run Move Base -->
   <include file="$(find paprika_navigation)/launch/move_base.launch" />
 
-
+  <node name="rviz"
+      pkg="rviz"
+      type="rviz"
+      args="-d $(find paprika_navigation)/rviz/navigation.rviz"
+      required="false"
+     />
 
 <!--        <node pkg="recovery" type="detect_localization_failure_02.py" respawn="true" name="localization_recovery_node" output="screen"/>
 -->
