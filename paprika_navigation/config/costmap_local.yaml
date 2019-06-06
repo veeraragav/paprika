@@ -1,7 +1,7 @@
 global_frame: odom
 rolling_window: true
-width: 5.0
-height: 5.0
+width: 2.0
+height: 2.0
 publish_frequency: 2
 update_frequency: 5.0
 
